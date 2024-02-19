@@ -1,3 +1,5 @@
+
+import ContactsContainer from "../Contactscontainer/ContactsContainer"
 import MyHeader from "../MyHeader/MyHeader"
 import SearchBar from "../SearchBar/SearchBar"
 
@@ -7,6 +9,7 @@ function HomePage() {
         <>
             <MyHeader />
             <SearchBar />
+            <ContactsContainer />
         </>
     )
 }

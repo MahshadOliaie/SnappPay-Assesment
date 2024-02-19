@@ -1,0 +1,37 @@
+
+
+.card{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.about{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    gap: 10px;
+    border-bottom: .5px solid black;
+    padding: 15px 0;
+    position: relative;
+}
+
+.image{
+    width: 90px;
+    aspect-ratio: 1/1;
+    border-radius: 25px;
+    margin: 20px;
+    margin-left: 0;
+}
+
+.name , .city , .phone{
+    margin: 0;
+}
+
+.city , .phone{
+    opacity: .5;
+    font-size: 14px;
+}
+

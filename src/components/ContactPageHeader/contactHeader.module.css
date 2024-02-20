@@ -1,0 +1,32 @@
+
+
+.header{
+    width: 100%;
+    padding: 20px 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.editBtn , .backBtn{
+    width: 50px;
+    aspect-ratio: 1/1;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.editBtn{
+    background-color: #4468C5;
+    fill: white;
+}
+
+.backBtn{
+    border: 2px solid;
+    opacity: .7;
+}
+
+.header svg{
+    width: 40%;
+}

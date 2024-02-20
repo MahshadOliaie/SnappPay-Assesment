@@ -1,0 +1,19 @@
+
+
+.moreInfo{
+    width: 100%;
+    padding: 20px 5%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.title{
+    font-size: small;
+    opacity: .5;
+    margin-bottom: 10px;
+}
+
+.titleInfo{
+    margin: 0;
+}

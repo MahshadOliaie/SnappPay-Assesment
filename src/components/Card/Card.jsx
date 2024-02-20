@@ -7,6 +7,7 @@ function Card() {
             <div className={CSS.about}>
             <h3 className={CSS.name}>name</h3>
             <p className={CSS.city}>Tehran</p>
+            
             <p className={CSS.phone}>09210377980</p>
             </div>
         </div>

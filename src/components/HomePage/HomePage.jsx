@@ -11,7 +11,7 @@ function HomePage() {
         <>
             <MyHeader />
             <SearchBar />
-            <ContactsContainer data={filteredUsers} />
+            <ContactsContainer users={users} fileteredUsers={filteredUsers} />
         </>
     )
 }

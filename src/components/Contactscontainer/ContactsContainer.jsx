@@ -1,12 +1,19 @@
 import Card from '../Card/Card'
+import Skeleton from '../Skeleton/Skeleton'
 import CSS from './contactsContainer.module.css'
 
-function ContactsContainer({ data }) {
+function ContactsContainer({ users, fileteredUsers }) {
     return (
         <div className={CSS.container}>
-            {data.map((user, index) => {
-                return <Card key={index} user={user} />
-            })}
+            {(users.length > 0) ?
+                fileteredUsers.map((user, index) => {
+                    return <Card key={index} user={user} />
+                })
+                :
+                [...new Array(20)].map(user => {
+                    return <Skeleton />
+                })
+            }
         </div>
     )
 }

@@ -2,11 +2,11 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom"
 import HomePage from "./components/HomePage/HomePage"
 import Contactpage from "./components/ContactPage/ContactPage"
 import RecentlyVisited from "./context/RecentlyVisited"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 
 function App() {
-    const [recentlyVisited, setRecentlyVisited] = useState([{
+    const [recentlyVisited, setRecentlyVisited] = useState(JSON.parse(localStorage.getItem("recentlyVisited")) || [{
         name: { title: 'Mr', first: 'Slaviša', last: 'Kuzmanović' },
         phone: "038-6315-988",
         picture: { large: "https://randomuser.me/api/portraits/men/3.jpg" },
@@ -20,6 +20,11 @@ function App() {
             street: { number: 3010, name: 'Davidovićev Sokak' }
         }
     }])
+
+    useEffect(() => {
+        localStorage.setItem("recentlyVisited", JSON.stringify(recentlyVisited))
+    }, [recentlyVisited])
+
     return (
         <>
             <RecentlyVisited.Provider value={{

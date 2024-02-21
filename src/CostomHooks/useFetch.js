@@ -8,12 +8,12 @@ function useFetch() {
     useEffect(() => {
         fetch('https://randomuser.me/api/?results=50')
             .then(res => res.json())
-            .then(data => { setUsers(data.results); setFilteredUsers(data.results) })
+            .then(data => { setUsers(data.results) ; setFilteredUsers(data.results)})
 
         return () => { };
     }, [])
 
-    return {users , filteredUsers}
+    return {users , filteredUsers , setFilteredUsers}
 }
 
 export default useFetch

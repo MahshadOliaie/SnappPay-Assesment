@@ -10,8 +10,8 @@ function ContactsContainer({ users, fileteredUsers }) {
                     return <Card key={index} user={user} />
                 })
                 :
-                [...new Array(20)].map(user => {
-                    return <Skeleton />
+                [...new Array(20)].map((user, index) => {
+                    return <Skeleton key={index} />
                 })
             }
         </div>

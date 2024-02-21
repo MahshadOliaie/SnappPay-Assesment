@@ -1,0 +1,10 @@
+
+
+.recentUsers{
+    display: flex;
+    align-items: center;
+    padding: 40px 5%;
+    gap: 30px;
+    width: 100%;
+    overflow: scroll;
+}

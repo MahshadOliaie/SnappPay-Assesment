@@ -4,11 +4,12 @@ import MyHeader from "../MyHeader/MyHeader"
 import SearchBar from "../SearchBar/SearchBar"
 import useFetch from "../../CostomHooks/useFetch"
 import { useState } from "react"
+import RecentVisited from "../RecentVisited/RecentVisited"
 
 
 function HomePage() {
     const [inputValue, setInputValue] = useState("")
-    const { users , filteredUsers , setFilteredUsers } = useFetch()
+    const { users, filteredUsers, setFilteredUsers } = useFetch()
 
     function search() {
         let value = event.target.value
@@ -30,6 +31,7 @@ function HomePage() {
         <>
             <MyHeader />
             <SearchBar onChange={search} users={users} inputValue={inputValue} />
+            <RecentVisited />
             <ContactsContainer users={users} fileteredUsers={filteredUsers} />
         </>
     )

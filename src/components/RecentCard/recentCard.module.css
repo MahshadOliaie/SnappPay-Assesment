@@ -1,0 +1,39 @@
+
+
+.recentCard{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 120px;
+    flex-shrink: 0;
+    cursor: pointer;
+}
+
+
+.recentCard:hover img{
+    transform: scale(1.1);
+    transition: 300ms;
+}
+
+.image{
+    width: 100%;
+    aspect-ratio: 1/1;
+    border-radius: 40px;
+    overflow: hidden;
+}
+img{
+    width: 100%;
+    transition: 300ms;
+}
+.name{
+    margin: 0;
+    width: 100%;
+    margin-top: 10px;
+    text-align: center;
+    font-size: 16px;
+}
+
+.number{
+    font-size: 11px;
+}

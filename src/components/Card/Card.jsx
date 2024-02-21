@@ -1,12 +1,21 @@
 import { useNavigate } from 'react-router-dom'
 import CSS from './card.module.css'
+import { useContext } from 'react'
+import RecentlyVisited from '../../context/RecentlyVisited'
 
 function Card({ user }) {
     const Navigate = useNavigate()
     const { name, location, phone, picture } = user
     const userName = `${name.first} ${name.last}`
+
+    const { setRecentlyVisited } = useContext(RecentlyVisited)
+
+    function recentSetter(){
+        setRecentlyVisited((prev) => [...prev , user])
+    }
+
     return (
-        <div className={CSS.card} onClick={() => { Navigate(`/contact`)}}>
+        <div className={CSS.card} onClick={() => { Navigate(`/contact`) ; recentSetter()}}>
             <div className={CSS.image}>
                 <img src={picture.large} alt="" />
             </div>

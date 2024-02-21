@@ -8,10 +8,11 @@ function Card({ user }) {
     const { name, location, phone, picture } = user
     const userName = `${name.first} ${name.last}`
 
-    const { setRecentlyVisited } = useContext(RecentlyVisited)
+    const {recentlyVisited,setRecentlyVisited } = useContext(RecentlyVisited)
 
     function recentSetter(){
-        setRecentlyVisited((prev) => [...prev , user])
+        let array = [...recentlyVisited , user]
+        setRecentlyVisited(array.reverse().slice(0,4).reverse())
     }
 
     return (

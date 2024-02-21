@@ -9,8 +9,8 @@ function RecentVisited(){
     return(
         <>
         <div className={CSS.recentUsers}>
-            {recentlyVisited.map(user => {
-                return <RecentCard user={user}/>
+            {recentlyVisited.map((user , index) => {
+                return <RecentCard key={index} user={user}/>
             })}
         </div>
         </>

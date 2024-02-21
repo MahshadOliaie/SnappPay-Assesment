@@ -6,7 +6,7 @@ import Contactpage from './components/ContactPage/ContactPage'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <Contactpage />
-    {/* <HomePage /> */}
+    {/* <Contactpage /> */}
+    <HomePage />
   </React.StrictMode>,
 )

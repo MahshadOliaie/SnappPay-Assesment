@@ -1,15 +1,12 @@
 import Card from '../Card/Card'
 import CSS from './contactsContainer.module.css'
 
-function ContactsContainer() {
+function ContactsContainer({ data }) {
     return (
         <div className={CSS.container}>
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
+            {data.map((user, index) => {
+                return <Card key={index} user={user} />
+            })}
         </div>
     )
 }

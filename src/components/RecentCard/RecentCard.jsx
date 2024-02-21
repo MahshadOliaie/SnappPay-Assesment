@@ -8,15 +8,21 @@ function recentCard({ user }) {
     const { name, phone, picture } = user
     const userName = `${name.first} ${name.last}`
 
-    const { recentlyVisited ,setRecentlyVisited } = useContext(RecentlyVisited)
+    const { recentlyVisited, setRecentlyVisited } = useContext(RecentlyVisited)
 
-    function recentSetter(){
-        let array = [...recentlyVisited , user]
-        setRecentlyVisited(array.reverse().slice(0,4).reverse())
+    function recentSetter() {
+        let array = [...recentlyVisited]
+        array.map((item, index) => {
+            if (item == user) {
+                array.splice(index, 1)
+            }
+        })
+        array = [...array, user]
+        setRecentlyVisited(array.reverse().slice(0, 4).reverse())
     }
     return (
         <>
-            <div className={CSS.recentCard} onClick={() => {Navigate('/contact'); recentSetter()}}>
+            <div className={CSS.recentCard} onClick={() => { Navigate('/contact'); recentSetter() }}>
                 <div className={CSS.image}>
                     <img src={picture.large} alt="" />
                 </div>

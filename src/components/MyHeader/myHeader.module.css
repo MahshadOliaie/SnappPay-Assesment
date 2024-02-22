@@ -12,8 +12,10 @@
     width: 50px;
     aspect-ratio: 1/1;
     border-radius: 20px;
-    background-image: url(public/user.jpeg);
-    background-size: cover;
+    overflow: hidden;
+}
+img{
+    width: 100%;
 }
 
 .addBtn{

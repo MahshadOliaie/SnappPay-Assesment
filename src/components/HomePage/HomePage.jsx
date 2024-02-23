@@ -16,13 +16,23 @@ function HomePage() {
         setInputValue(value)
 
         let filter = []
-        users.map(user => {
-            let newName = `${user.name.first} ${user.name.last}`
-            if (newName.startsWith(value.toUpperCase())) {
-                filter.push(user)
-            }
-        })
 
+        if (value.match(/\d/)) {
+            users.map(user => {
+                if (user.phone.startsWith(value)) {
+                    filter.push(user)
+                }
+            })
+
+        }
+        else {
+            users.map(user => {
+                let newName = `${user.name.first} ${user.name.last}`
+                if (newName.startsWith(value.toUpperCase())) {
+                    filter.push(user)
+                }
+            })
+        }
         setFilteredUsers(filter)
 
     }

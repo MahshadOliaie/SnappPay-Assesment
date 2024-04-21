@@ -7,6 +7,7 @@ import LoginPage from "./components/LoginPage/LoginPage"
 
 
 function App() {
+    const [isLoggedIn, setIsLoggedIn] = useState(JSON.parse(localStorage.getItem("recentlyVisited")) || false)
     const [recentlyVisited, setRecentlyVisited] = useState(JSON.parse(localStorage.getItem("recentlyVisited")) || [{
         name: { title: 'Mr', first: 'Slaviša', last: 'Kuzmanović' },
         phone: "038-6315-988",
@@ -24,7 +25,9 @@ function App() {
 
     useEffect(() => {
         localStorage.setItem("recentlyVisited", JSON.stringify(recentlyVisited))
-    }, [recentlyVisited])
+        localStorage.setItem("isLoggedIn", JSON.stringify(isLoggedIn))
+
+    }, [recentlyVisited , isLoggedIn])
 
     return (
         <>
@@ -32,13 +35,17 @@ function App() {
                 recentlyVisited,
                 setRecentlyVisited,
             }}>
-                {/* <Router>
-                    <Routes>
-                        <Route path="/" element={<HomePage />} />
-                        <Route path="/contact" element={<Contactpage />} />
-                    </Routes>
-                </Router> */}
-                <LoginPage />
+                {(isLoggedIn) ?
+                    <Router>
+                        <Routes>
+                            <Route path="/" element={<HomePage />} />
+                            <Route path="/contact" element={<Contactpage />} />
+                        </Routes>
+                    </Router>
+                    :
+                    <LoginPage setIsLoggedIn={setIsLoggedIn} />
+                }
+
             </RecentlyVisited.Provider>
         </>
     )

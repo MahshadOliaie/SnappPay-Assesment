@@ -104,9 +104,21 @@ a{
     font-size: 16px;
     font-weight: 600;
     box-shadow: 0 3px 6px rgba(128, 128, 128, 0.692);
+    transition: 300ms;
 
 }
 
 h1{
     color: #6d55a2;
+}
+
+.submit:hover{
+    transform: scale(1.02);
+    transition: 300ms;
+}
+
+.error{
+    color: red;
+    margin: 0;
+    font-size: 12px;
 }

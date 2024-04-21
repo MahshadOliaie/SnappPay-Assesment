@@ -3,6 +3,7 @@ import HomePage from "./components/HomePage/HomePage"
 import Contactpage from "./components/ContactPage/ContactPage"
 import RecentlyVisited from "./context/RecentlyVisited"
 import { useEffect, useState } from "react"
+import LoginPage from "./components/LoginPage/LoginPage"
 
 
 function App() {
@@ -31,12 +32,13 @@ function App() {
                 recentlyVisited,
                 setRecentlyVisited,
             }}>
-                <Router>
+                {/* <Router>
                     <Routes>
                         <Route path="/" element={<HomePage />} />
                         <Route path="/contact" element={<Contactpage />} />
                     </Routes>
-                </Router>
+                </Router> */}
+                <LoginPage />
             </RecentlyVisited.Provider>
         </>
     )
